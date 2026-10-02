@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440">
+<rect width="560" height="440" fill="#eef0e2"/>
+<path d="M0 330 C120 290 200 380 330 340 S500 300 560 330 V440 H0Z" fill="#cfe0c4"/>
+<path d="M0 90 C90 60 140 140 230 110 S400 40 560 80" fill="none" stroke="#bcd3e0" stroke-width="26" stroke-linecap="round"/>
+<g stroke="#fff" stroke-width="12" stroke-linecap="round" fill="none">
+<path d="M40 0 L120 440"/><path d="M200 0 L260 440"/><path d="M360 0 L470 440"/>
+<path d="M0 200 L560 240"/><path d="M0 300 L560 190"/></g>
+<g fill="#d9d3bd"><rect x="60" y="215" width="50" height="40" rx="4"/><rect x="290" y="250" width="56" height="44" rx="4"/><rect x="420" y="130" width="60" height="42" rx="4"/><rect x="130" y="130" width="46" height="36" rx="4"/></g>
+<g font-family="Inter,Arial,sans-serif" font-weight="700" font-size="16" fill="#fff"><g transform="translate(110 150)"><path d="M0 0 L-12 -22 A16 16 0 1 1 12 -22 Z" fill="#1a3a2e" stroke="#fff" stroke-width="2"/><text x="0" y="-28" text-anchor="middle">1</text></g><g transform="translate(300 230)"><path d="M0 0 L-12 -22 A16 16 0 1 1 12 -22 Z" fill="#1a3a2e" stroke="#fff" stroke-width="2"/><text x="0" y="-28" text-anchor="middle">2</text></g><g transform="translate(430 170)"><path d="M0 0 L-12 -22 A16 16 0 1 1 12 -22 Z" fill="#1a3a2e" stroke="#fff" stroke-width="2"/><text x="0" y="-28" text-anchor="middle">3</text></g><g transform="translate(200 330)"><path d="M0 0 L-12 -22 A16 16 0 1 1 12 -22 Z" fill="#8a6a12" stroke="#fff" stroke-width="2"/><text x="0" y="-28" text-anchor="middle">4</text></g></g>
+</svg>
