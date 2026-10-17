@@ -1,0 +1,148 @@
+Regras do Projeto — Reciclê Bairro
+1. Objetivo do projeto
+
+O projeto deve representar o site institucional Reciclê Bairro, voltado à reciclagem, à coleta seletiva, à sustentabilidade e ao impacto social.
+O conteúdo deve destacar a aproximação entre moradores e cooperativas de catadores da Zona Leste de São Paulo.
+Todas as alterações devem respeitar a finalidade acadêmica do projeto de Front-End da UNICID.
+Utilizar português brasileiro em textos, títulos, botões, mensagens e formulários.
+
+2. Tecnologias obrigatórias
+
+Utilizar HTML5 semântico para estruturar as páginas.
+Utilizar CSS3 puro para estilização.
+Manter todo o CSS do projeto no arquivo compartilhado style.css.
+Não utilizar JavaScript.
+Não utilizar frameworks ou bibliotecas externas de interface, como React, Vue, Angular, Bootstrap ou Tailwind CSS.
+Não adicionar dependências, ferramentas de compilação ou processos de instalação.
+O site deve continuar funcionando como um projeto estático, sem necessidade de servidor de aplicação ou banco de dados.
+
+3. Estrutura de arquivos
+
+Preservar a estrutura de arquivos existente no repositório.
+Manter as páginas HTML na raiz do projeto.
+Utilizar style.css como arquivo único de estilos compartilhados.
+Armazenar as imagens e ilustrações na pasta img/.
+Manter a documentação e as capturas de tela na pasta docs/.
+Não criar arquivos duplicados quando for possível aproveitar os arquivos existentes.
+Não renomear ou remover arquivos e páginas sem necessidade.
+Antes de criar novos arquivos, verificar se a funcionalidade pode ser implementada na estrutura existente.
+
+
+4. Páginas do site
+
+Manter as seguintes páginas e suas respectivas finalidades:
+
+index.html: página inicial, apresentação do projeto, problema, indicadores e destaque de acessibilidade.
+sobre.html: história, missão, visão e valores do projeto.
+projetos.html: pontos de coleta, frentes de atuação, depoimentos e formulário de avaliação.
+impacto.html: resultados, benefícios e formas de participação.
+acessibilidade.html: recursos de acessibilidade para diferentes tipos de deficiência.
+galeria.html: registros e ilustrações das ações do projeto.
+midia.html: guia de cores da coleta seletiva e orientações para o descarte correto.
+noticias.html: notícias e informações relacionadas à reciclagem e ao descarte de resíduos.
+contato.html: informações de contato e formulário de mensagem.
+hospedagem.html: comparativo de opções de hospedagem e domínio.
+Não remover páginas ou alterar suas finalidades sem uma solicitação explícita.
+
+5. HTML semântico
+Utilizar elementos semânticos adequados, como header, nav, main, section, article e footer.
+Cada página deve possuir uma estrutura lógica e consistente.
+Utilizar títulos hierárquicos em ordem adequada, começando pelo h1 principal e utilizando h2 e h3 conforme a organização do conteúdo.
+Utilizar elementos HTML de acordo com sua finalidade, evitando o uso excessivo de div quando houver elementos semânticos apropriados.
+Definir o idioma do documento como português brasileiro por meio de lang="pt-BR".
+Incluir metadados essenciais, como codificação UTF-8 e configuração de viewport.
+Manter os links e caminhos relativos compatíveis com a estrutura estática do projeto.
+
+6. CSS e identidade visual
+
+Centralizar as regras de estilo no arquivo style.css.
+Reutilizar as classes e os padrões visuais existentes antes de criar novos estilos.
+Evitar estilos inline e regras CSS duplicadas.
+Preservar a identidade visual relacionada à reciclagem, à sustentabilidade e ao impacto social.
+Utilizar cores, tipografia, espaçamentos e componentes de maneira consistente entre as páginas.
+Organizar o CSS por componentes ou seções, utilizando comentários quando ajudarem na manutenção.
+Evitar seletores excessivamente específicos e o uso desnecessário de !important.
+Garantir que novas regras não quebrem o layout de páginas existentes.
+
+7. Responsividade
+
+Garantir o funcionamento do site em celulares, tablets e computadores.
+Utilizar recursos de CSS responsivo, como media queries, Flexbox e Grid, quando apropriado.
+Evitar larguras fixas que provoquem rolagem horizontal em telas pequenas.
+Garantir que menus, imagens, textos, formulários e demais componentes permaneçam legíveis e utilizáveis em diferentes resoluções.
+Preservar a hierarquia visual e a facilidade de navegação em dispositivos móveis.
+
+8. Acessibilidade obrigatória
+
+Incluir um link "Pular para o conteúdo" no início de cada página.
+Garantir navegação completa pelo teclado.
+Manter indicadores de foco visíveis nos links, botões e campos interativos.
+Utilizar textos alternativos descritivos nas imagens informativas.
+Associar todos os campos de formulário a rótulos explícitos por meio de label e for.
+Garantir contraste adequado entre texto e fundo.
+Nunca transmitir informações exclusivamente por meio das cores.
+Utilizar textos claros e compreensíveis.
+Preservar uma ordem lógica de leitura e navegação.
+Não remover recursos de acessibilidade ao atualizar o layout ou os estilos.
+Utilizar atributos ARIA somente quando necessários e quando o HTML semântico não for suficiente.
+
+9. Navegação e links
+
+Manter a navegação consistente entre todas as páginas.
+Garantir que os links do menu direcionem para os arquivos HTML corretos.
+Verificar os caminhos dos links após mover ou criar arquivos.
+Utilizar textos descritivos nos links, evitando rótulos sem contexto.
+Garantir que links e controles possam ser identificados e utilizados pelo teclado.
+Não criar links que aparentem funcionar, mas não possuam destino ou comportamento definido.
+Preservar a navegação entre as páginas existentes.
+
+10. Formulários e dados demonstrativos
+
+Os formulários de avaliação e contato são demonstrativos e não devem ser apresentados como sistemas funcionais de envio de dados.
+Não afirmar que uma mensagem foi enviada ou armazenada quando isso não ocorrer.
+Não adicionar integração com APIs, bancos de dados ou serviços externos sem solicitação explícita.
+Utilizar campos com rótulos claros e tipos HTML adequados.
+Quando necessário, informar ao usuário que o formulário é apenas demonstrativo.
+Preservar a finalidade acadêmica dos formulários e dos elementos interativos existentes.
+
+11. Conteúdo e integridade das informações
+
+Não inventar estatísticas, resultados ambientais, endereços, contatos reais ou parcerias institucionais.
+Preservar a distinção entre informações reais, exemplos ilustrativos e conteúdos fictícios.
+Os depoimentos, o e-mail e o telefone mencionados no README são fictícios e devem continuar identificados como conteúdo de demonstração quando apresentados.
+Tratar as imagens existentes na pasta img/ como ilustrações provisórias, conforme informado no README.
+Não apresentar ilustrações provisórias como fotografias documentais reais.
+Ao alterar notícias ou informações factuais, manter a origem dos dados e as referências pertinentes.
+Não modificar informações institucionais sem necessidade ou sem uma solicitação explícita.
+
+12. Imagens e recursos
+
+Utilizar preferencialmente os recursos já disponíveis no projeto.
+Manter as imagens organizadas na pasta img/.
+Utilizar caminhos relativos válidos para carregar imagens.
+Adicionar texto alternativo apropriado a cada imagem.
+Evitar imagens quebradas, recursos inexistentes e dependências externas desnecessárias.
+Não substituir imagens existentes sem avaliar o impacto visual e semânt ico da alteração.
+Não utilizar imagens meramente decorativas para transmitir informações essenciais sem uma alternativa textual.
+
+13. Manutenção e qualidade do código
+
+Antes de implementar alterações, analisar o HTML e o CSS existentes.
+Fazer modificações pequenas, organizadas e compatíveis com o restante do projeto.
+Evitar repetir estruturas e estilos desnecessariamente.
+Não remover funcionalidades ou conteúdo existente sem justificativa.
+Não introduzir JavaScript como solução para problemas que possam ser resolvidos com HTML e CSS.
+Verificar os caminhos dos arquivos, a consistência da navegação e a aplicação dos estilos após cada alteração.
+Revisar o código para identificar erros de marcação, elementos sem fechamento, links incorretos e problemas de responsividade.
+Não afirmar que testes foram executados sem realmente verificá-los.
+
+14. Execução e publicação
+
+O projeto deve continuar executável localmente, bastando abrir o arquivo index.html em um navegador.
+Não exigir instalação de pacotes ou execução de comandos para visualizar o site.
+Manter a compatibilidade com a publicação de um site estático no GitHub Pages.
+Não introduzir dependências de servidor ou banco de dados.
+Ao modificar caminhos ou arquivos, verificar se o projeto continua compatível com sua estrutura de publicação.
+
+15. Regra geral para qualquer alteração
+Antes de concluir uma implementação:

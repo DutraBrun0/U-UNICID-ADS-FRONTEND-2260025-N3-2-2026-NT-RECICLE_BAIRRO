@@ -1,0 +1,466 @@
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f6f3ea
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  color: #1a3a2e;
+  line-height: 1.2
+}
+
+h1 {
+  font-size: 2.4rem
+}
+
+h2 {
+  font-size: 1.7rem
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block
+}
+
+a {
+  color: #1a3a2e
+}
+
+:focus-visible {
+  outline: 3px solid #0b5cad;
+  outline-offset: 3px
+}
+
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0)
+}
+
+.skip-link {
+  position: absolute;
+  left: 10px;
+  top: -60px;
+  background: #fff;
+  padding: 10px 14px;
+  z-index: 10
+}
+
+.skip-link:focus {
+  top: 10px
+}
+
+
+.site-header {
+  background: #1a3a2e
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0
+}
+
+.brand {
+  color: #fff;
+  font: bold 1.5rem Georgia, serif;
+  text-decoration: none
+}
+
+.brand span {
+  color: #b9c9a0
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.nav-list a {
+  display: block;
+  padding: 8px 10px;
+  color: #fff;
+  text-decoration: none
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  border-bottom: 2px solid #c9a43a
+}
+
+.site-header :focus-visible {
+  outline-color: #ffd54a
+}
+
+
+.section {
+  padding: 40px 0
+}
+
+.page-title {
+  padding: 40px 0 0
+}
+
+.eyebrow {
+  display: block;
+  color: #7a5c0a;
+  font-weight: bold;
+  margin-bottom: 6px
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #4a5a52
+}
+
+.note {
+  font-size: .9rem;
+  color: #4a5a52
+}
+
+.prose>* {
+  max-width: 700px
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  padding: 40px 0
+}
+
+.hero-art {
+  border: 1px solid #ddd6c3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #1a3a2e;
+  color: #fff;
+  border: 2px solid #1a3a2e;
+  border-radius: 6px;
+  text-decoration: none;
+  font: bold 1rem Arial, sans-serif;
+  cursor: pointer
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1a3a2e
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px
+}
+
+.cards,
+.points,
+.stats,
+.gallery,
+.steps,
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0
+}
+
+.points {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+}
+
+.card,
+.point,
+.steps li,
+blockquote,
+.gallery figure {
+  background: #fff;
+  border: 1px solid #ddd6c3;
+  border-radius: 6px;
+  padding: 18px;
+  margin: 0
+}
+
+.gallery figure {
+  padding: 0;
+  overflow: hidden
+}
+
+.gallery figcaption {
+  padding: 12px 16px;
+  font-weight: bold
+}
+
+.gallery figcaption span {
+  display: block;
+  font-weight: normal;
+  color: #4a5a52
+}
+
+.card h3,
+.point h3 {
+  margin-top: 0
+}
+
+.pin-num,
+.card .icon {
+  display: inline-block;
+  background: #1a3a2e;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  line-height: 28px;
+  font-size: .9rem;
+  margin-right: 6px
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0
+}
+
+.tags li {
+  border: 1px solid #ddd6c3;
+  background: #f6f3ea;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: .85rem
+}
+
+address {
+  font-style: normal;
+  color: #4a5a52
+}
+
+.stat-num {
+  display: block;
+  font: bold 2.8rem Georgia, serif;
+  color: #1a3a2e
+}
+
+.stat-label {
+  display: block;
+  color: #4a5a52
+}
+
+.steps {
+  counter-reset: s
+}
+
+.steps li {
+  counter-increment: s
+}
+
+.steps li::before {
+  content: counter(s);
+  display: inline-block;
+  background: #1a3a2e;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold
+}
+
+.bin {
+  display: flex;
+  gap: 14px
+}
+
+.bin svg {
+  width: 40px;
+  flex: none
+}
+
+blockquote {
+  border-left: 5px solid #c9a43a
+}
+
+blockquote footer {
+  color: #4a5a52;
+  font-size: .9rem
+}
+
+.callout {
+  background: #1a3a2e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 30px
+}
+
+.callout h2 {
+  color: #fff
+}
+
+.callout .btn {
+  background: #f6f3ea;
+  color: #1a3a2e;
+  border-color: #f6f3ea
+}
+
+.callout a {
+  color: #fff
+}
+
+.map-fig {
+  margin: 30px 0 0;
+  max-width: 600px
+}
+
+/* acessibilidade */
+.barreira {
+  font-style: italic;
+  color: #4a5a52
+}
+
+/* notícia */
+.article {
+  max-width: 700px
+}
+
+.article .deck {
+  font-size: 1.2rem;
+  color: #4a5a52
+}
+
+.article .meta,
+.article .source {
+  color: #4a5a52;
+  font-size: .9rem
+}
+
+.article figure {
+  margin: 0 0 20px
+}
+
+/* formulário */
+.form {
+  max-width: 520px
+}
+
+.field {
+  margin-bottom: 14px
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font: inherit;
+  border: 1.5px solid #6d7a73;
+  border-radius: 4px
+}
+
+/* tabela */
+.table-wrap {
+  overflow-x: auto
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  background: #fff
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  padding: 10px 0
+}
+
+th,
+td {
+  border: 1px solid #ddd6c3;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top
+}
+
+thead th {
+  background: #1a3a2e;
+  color: #fff
+}
+
+/* rodapé */
+.site-footer {
+  background: #12241b;
+  color: #cfd8cc;
+  padding: 30px 0;
+  margin-top: 40px
+}
+
+.site-footer h2 {
+  font: bold 1rem Arial, sans-serif;
+  color: #fff
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  list-style: none;
+  padding: 0
+}
+
+.footer-nav a {
+  color: #cfd8cc;
+  padding: 4px 0;
+  display: inline-block
+}
+
+.site-footer small {
+  display: block
+}
+
+@media (max-width:760px) {
+  .hero .container {
+    grid-template-columns: 1fr
+  }
+}
