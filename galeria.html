@@ -14,7 +14,7 @@
   <div class="container">
     <a class="brand" href="index.html" aria-label="Reciclê Bairro, página inicial">Reciclê <span>Bairro</span></a>
     <nav aria-label="Principal">
-      <ul class="nav-list"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="acessibilidade.html">Acessibilidade</a></li><li><a href="galeria.html" aria-current="page">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li></ul>
+      <ul class="nav-list"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Ecopontos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="galeria.html" aria-current="page">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li></ul>
     </nav>
   </div>
 </header>
@@ -26,10 +26,107 @@
 <footer class="site-footer">
   <div class="container">
     <h2>Mapa do site</h2>
-    <ul class="footer-nav"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Projetos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="acessibilidade.html">Acessibilidade</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li><li><a href="hospedagem.html">Orçamento de hospedagem</a></li></ul>
+    <ul class="footer-nav"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Ecopontos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li><li><a href="hospedagem.html">Orçamento de hospedagem</a></li></ul>
     <small>Reciclê Bairro — Atividade A2, Front-End, UNICID, 2026.</small>
     <small>Projeto acadêmico: depoimentos, e-mail e telefone são ilustrativos.</small>
   </div>
 </footer>
+<!-- Filtros SVG Globais para Daltonismo (Coloque em todas as páginas antes de </body>) -->
+<svg style="display: none;">
+  <defs>
+    <filter id="protanopia-filter">
+      <feColorMatrix type="matrix" values="
+        0.56667, 0.43333, 0,       0, 0
+        0.55833, 0.44167, 0,       0, 0
+        0,       0.24167, 0.75833, 0, 0
+        0,       0,       0,       1, 0" />
+    </filter>
+    <filter id="deuteranopia-filter">
+      <feColorMatrix type="matrix" values="
+        0.625, 0.375, 0,   0, 0
+        0.7,   0.3,   0,   0, 0
+        0,     0.3,   0.7, 0, 0
+        0,     0,     0,   1, 0" />
+    </filter>
+    <filter id="tritanopia-filter">
+      <feColorMatrix type="matrix" values="
+        0.95, 0.05,  0,     0, 0
+        0,    0.433, 0.567, 0, 0
+        0,    0.475, 0.525, 0, 0
+        0,    0,     0,     1, 0" />
+    </filter>
+  </defs>
+</svg>
+
+<!-- Script de Acessibilidade Global -->
+<script>
+// APLICA IMEDIATAMENTE AO CARREGAR A PÁGINA (Evita piscar a cor original)
+(function() {
+  const modoSalvo = localStorage.getItem('modo-daltonismo');
+  if (modoSalvo && modoSalvo !== 'normal') {
+    document.documentElement.classList.add(`daltonismo-${modoSalvo}`);
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btnMain = document.getElementById('btn-daltonismo');
+  const modal = document.getElementById('modal-daltonismo');
+  const opcoes = document.querySelectorAll('.btn-opcao');
+  const htmlEl = document.documentElement;
+
+  if (btnMain && modal) {
+    btnMain.addEventListener('click', () => {
+      const isExpanded = btnMain.getAttribute('aria-expanded') === 'true';
+      btnMain.setAttribute('aria-expanded', !isExpanded);
+      modal.hidden = isExpanded;
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!btnMain.contains(e.target) && !modal.contains(e.target)) {
+        modal.hidden = true;
+        btnMain.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  function aplicarModo(modo) {
+    htmlEl.classList.remove(
+      'daltonismo-protanopia',
+      'daltonismo-deuteranopia',
+      'daltonismo-tritanopia',
+      'daltonismo-alto-contraste'
+    );
+
+    opcoes.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.modo === modo);
+    });
+
+    if (modo !== 'normal') {
+      htmlEl.classList.add(`daltonismo-${modo}`);
+    }
+
+    localStorage.setItem('modo-daltonismo', modo);
+  }
+
+  opcoes.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modo = btn.dataset.modo;
+      aplicarModo(modo);
+      if (modal) {
+        modal.hidden = true;
+        btnMain.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Sincroniza o botão ativo caso o usuário abra o menu em outra página
+  const modoSalvo = localStorage.getItem('modo-daltonismo');
+  if (modoSalvo) {
+    opcoes.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.modo === modoSalvo);
+    });
+  }
+});
+</script>
 </body>
 </html>
