@@ -77,4 +77,4 @@ O comparativo completo de custos está em `hospedagem.html`.
 ### Realizado pelo grupo Arrogantes
 GitHub: [DutraBrun0](https://github.com/DutraBrun0)
 
-### Acesse o projeto online:(https://recicle-bairro.up.railway.app/)
+### Acesse o projeto online:(https://u-unicid-ads-frontend-2260025-n3-2.vercel.app/)
