@@ -1,16 +1,44 @@
+/* =========================================================
+   Reciclê Bairro · style.css
+   Um único arquivo de estilos para as 10 páginas.
+   Índice: 1. Variáveis  2. Base  3. Cabeçalho e menus
+           4. Conteúdo  5. Formulários  6. Rodapé
+           7. Modo daltônico  8. Responsivo (2ª entrega)
+   ========================================================= */
+
+/* 1. Variáveis: mude a paleta do site inteiro aqui */
+:root {
+  --cor-verde: #1a3a2e;        /* cabeçalho, títulos, botões */
+  --cor-verde-claro: #265443;
+  --cor-creme: #f6f3ea;        /* fundo das páginas */
+  --cor-salvia: #b9c9a0;       /* detalhes sobre o verde */
+  --cor-texto: #222;
+  --cor-texto-suave: #4a5a52;
+  --cor-destaque: #c9a43a;     /* item ativo do menu */
+  --cor-borda: #e2dccb;
+  --cor-foco: #0b5cad;         /* contorno de foco no fundo claro */
+  --cor-foco-escuro: #ffd54a;  /* contorno de foco no cabeçalho */
+  --cor-erro: #b3261e;         /* contraste 5,9:1 sobre branco */
+  --cor-sucesso: #1e6b3a;
+  --fonte-texto: Arial, Helvetica, sans-serif;
+  --fonte-titulo: Georgia, serif;
+  --raio: 8px;
+}
+
+/* 2. Base */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--fonte-texto);
   line-height: 1.6;
   color: #222;
-  background: #f6f3ea;
+  background: var(--cor-creme);
 }
 
 h1,
 h2,
 h3 {
   font-family: Georgia, serif;
-  color: #1a3a2e;
+  color: var(--cor-verde);
   line-height: 1.2;
 }
 
@@ -29,11 +57,11 @@ img {
 }
 
 a {
-  color: #1a3a2e;
+  color: var(--cor-verde);
 }
 
 :focus-visible {
-  outline: 3px solid #0b5cad;
+  outline: 3px solid var(--cor-foco);
   outline-offset: 3px;
 }
 
@@ -63,9 +91,9 @@ a {
   top: 10px;
 }
 
-/* Site Header */
+/* 3. Cabeçalho e menus */
 .site-header {
-  background: #1a3a2e;
+  background: var(--cor-verde);
 }
 
 .site-header .container {
@@ -84,7 +112,7 @@ a {
 }
 
 .brand span {
-  color: #b9c9a0;
+  color: var(--cor-salvia);
 }
 
 .nav-list {
@@ -105,11 +133,11 @@ a {
 
 .nav-list a:hover,
 .nav-list a[aria-current="page"] {
-  border-bottom: 2px solid #c9a43a;
+  border-bottom: 2px solid var(--cor-destaque);
 }
 
 .site-header :focus-visible {
-  outline-color: #ffd54a;
+  outline-color: var(--cor-foco-escuro);
 }
 
 /* Menu de Acessibilidade */
@@ -124,7 +152,7 @@ a {
   gap: 6px;
   background-color: #265443;
   color: #ffffff;
-  border: 1px solid #b9c9a0;
+  border: 1px solid var(--cor-salvia);
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 0.85rem;
@@ -161,11 +189,11 @@ a {
   font-size: 0.8rem;
   font-weight: bold;
   margin: 0 0 4px 0;
-  color: #1a3a2e;
+  color: var(--cor-verde);
 }
 
 .btn-opcao {
-  background: #f6f3ea;
+  background: var(--cor-creme);
   border: 1px solid #ddd6c3;
   padding: 6px 10px;
   text-align: left;
@@ -176,17 +204,17 @@ a {
 }
 
 .btn-opcao:hover {
-  background: #e2dccb;
+  background: var(--cor-borda);
 }
 
 .btn-opcao.active {
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
-  border-color: #1a3a2e;
+  border-color: var(--cor-verde);
 }
 
 /* ==========================================
-   MUDANÇA GLOBAL DE CORES NO SITE INTEIRO
+   7. Modo daltônico: muda as cores do site inteiro
    ========================================== */
 
 html.daltonismo-protanopia {
@@ -205,7 +233,7 @@ html.daltonismo-alto-contraste {
   filter: contrast(160%) brightness(105%);
 }
 
-/* Conteúdo Principal */
+/* 4. Conteúdo */
 .section {
   padding: 40px 0;
 }
@@ -223,12 +251,12 @@ html.daltonismo-alto-contraste {
 
 .lead {
   font-size: 1.15rem;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .note {
   font-size: .9rem;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .prose>* {
@@ -253,9 +281,9 @@ html.daltonismo-alto-contraste {
 .btn {
   display: inline-block;
   padding: 10px 18px;
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
-  border: 2px solid #1a3a2e;
+  border: 2px solid var(--cor-verde);
   border-radius: 6px;
   text-decoration: none;
   font: bold 1rem Arial, sans-serif;
@@ -264,7 +292,7 @@ html.daltonismo-alto-contraste {
 
 .btn-outline {
   background: transparent;
-  color: #1a3a2e;
+  color: var(--cor-verde);
 }
 
 .actions {
@@ -316,7 +344,7 @@ blockquote,
 .gallery figcaption span {
   display: block;
   font-weight: normal;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .card h3,
@@ -327,7 +355,7 @@ blockquote,
 .pin-num,
 .card .icon {
   display: inline-block;
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
   border-radius: 50%;
   width: 28px;
@@ -348,7 +376,7 @@ blockquote,
 
 .tags li {
   border: 1px solid #ddd6c3;
-  background: #f6f3ea;
+  background: var(--cor-creme);
   border-radius: 4px;
   padding: 2px 8px;
   font-size: .85rem;
@@ -356,18 +384,18 @@ blockquote,
 
 address {
   font-style: normal;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .stat-num {
   display: block;
   font: bold 2.8rem Georgia, serif;
-  color: #1a3a2e;
+  color: var(--cor-verde);
 }
 
 .stat-label {
   display: block;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .steps {
@@ -381,7 +409,7 @@ address {
 .steps li::before {
   content: counter(s);
   display: inline-block;
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
   border-radius: 50%;
   width: 30px;
@@ -402,16 +430,16 @@ address {
 }
 
 blockquote {
-  border-left: 5px solid #c9a43a;
+  border-left: 5px solid var(--cor-destaque);
 }
 
 blockquote footer {
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
   font-size: .9rem;
 }
 
 .callout {
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
   border-radius: 8px;
   padding: 30px;
@@ -422,9 +450,9 @@ blockquote footer {
 }
 
 .callout .btn {
-  background: #f6f3ea;
-  color: #1a3a2e;
-  border-color: #f6f3ea;
+  background: var(--cor-creme);
+  color: var(--cor-verde);
+  border-color: var(--cor-creme);
 }
 
 .callout a {
@@ -439,7 +467,7 @@ blockquote footer {
 /* acessibilidade */
 .barreira {
   font-style: italic;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 /* notícia */
@@ -449,12 +477,12 @@ blockquote footer {
 
 .article .deck {
   font-size: 1.2rem;
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
 }
 
 .article .meta,
 .article .source {
-  color: #4a5a52;
+  color: var(--cor-texto-suave);
   font-size: .9rem;
 }
 
@@ -515,7 +543,7 @@ td {
 }
 
 thead th {
-  background: #1a3a2e;
+  background: var(--cor-verde);
   color: #fff;
 }
 
@@ -555,3 +583,267 @@ thead th {
     grid-template-columns: 1fr;
   }
 } 
+
+/* =========================================================
+   2ª entrega: menu do celular, formulários validados,
+   vídeos e mapa, ODS e ajustes de tablet
+   ========================================================= */
+
+/* SVG dos filtros do modo daltônico: existe, mas não aparece */
+.filtros-daltonismo {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Cabeçalho: com 10 páginas, o menu ganha uma linha só para ele */
+.site-header nav {
+  order: 3;
+  flex-basis: 100%;
+}
+
+.accessibility-menu {
+  order: 2;
+  margin-left: auto;
+}
+
+.btn-acessibilidade {
+  font-size: 0.9rem;
+  border-radius: var(--raio);
+  padding: 8px 12px;
+}
+
+.modal-daltonismo {
+  right: 0;
+  z-index: 20;
+}
+
+.btn-opcao[aria-pressed="true"] {
+  font-weight: bold;
+}
+
+/* Botão "Menu": só aparece no celular */
+.menu-toggle {
+  display: none;
+  order: 1;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--cor-salvia);
+  border-radius: var(--raio);
+  padding: 8px 12px;
+  font: bold 0.95rem var(--fonte-texto);
+  cursor: pointer;
+}
+
+.menu-toggle-barras,
+.menu-toggle-barras::before,
+.menu-toggle-barras::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: transform .2s ease;
+}
+
+.menu-toggle-barras::before,
+.menu-toggle-barras::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle-barras::before { top: -6px; }
+.menu-toggle-barras::after { top: 6px; }
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-barras { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-toggle-barras::before { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle-barras::after { transform: translateY(-6px) rotate(-45deg); }
+
+.nav-list a,
+.btn {
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+/* 5. Formulários: mensagens de erro e sucesso */
+.obrigatorio {
+  color: var(--cor-erro);
+}
+
+.nota-form,
+.ajuda {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  margin: 0 0 4px;
+}
+
+.erro {
+  color: var(--cor-erro);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 4px 0 0;
+  min-height: 1.2em;
+}
+
+.erro:not(:empty)::before {
+  content: "⚠ ";   /* o erro não depende só da cor */
+}
+
+.field .campo-invalido {
+  border: 2px solid var(--cor-erro);
+  background: #fdf1f0;
+}
+
+.form-status {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.sucesso {
+  color: var(--cor-sucesso);
+  background: #e8f4ec;
+  border-left: 4px solid var(--cor-sucesso);
+  padding: 10px 14px;
+}
+
+.form-status.erro-geral {
+  color: var(--cor-erro);
+  background: #fdf1f0;
+  border-left: 4px solid var(--cor-erro);
+  padding: 10px 14px;
+}
+
+.aviso-rascunho {
+  background: #fff7dc;
+  border: 1px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  padding: 8px 12px;
+}
+
+.btn-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--cor-verde);
+  text-decoration: underline;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Vídeo e mapa responsivos (16:9) */
+.embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 820px;
+  margin: 16px 0;
+  border-radius: var(--raio);
+  overflow: hidden;
+  background: #e9e4d6;
+}
+
+.embed-mapa {
+  max-width: none;
+  aspect-ratio: 16 / 7;
+}
+
+.embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.source {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.pix {
+  font-size: 0.95rem;
+}
+
+/* 6. Rodapé: selos dos ODS */
+.ods-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: #cfd8cc;
+  font-size: 0.9rem;
+}
+
+.ods {
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.ods-8 { background: #8f1838; }
+.ods-11 { background: #a35d00; }
+.ods-12 { background: #7a5c12; }
+
+/* 8. Responsivo */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .embed-mapa {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Celular: menu vira lista que abre pelo botão */
+@media (max-width: 760px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .accessibility-menu {
+    margin-left: 0;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .nav-list.aberto {
+    display: flex;
+  }
+
+  .nav-list a {
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--cor-verde-claro);
+  }
+
+  .modal-daltonismo {
+    left: 0;
+    right: auto;
+  }
+}
+
+/* Quem pede menos movimento no sistema não vê animações */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

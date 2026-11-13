@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+<rect width="480" height="320" fill="#e4ecd8"/><rect y="250" width="480" height="70" fill="#c5d6b3"/>
+<rect x="60" y="90" width="150" height="14" rx="3" fill="#12241b"/><rect x="130" y="100" width="10" height="150" fill="#12241b"/>
+<text x="135" y="82" font-family="Inter,Arial" font-weight="700" font-size="22" text-anchor="middle" fill="#1a3a2e">ECOPONTO</text>
+<rect x="250.0" y="180" width="52" height="70.0" rx="5" fill="#1f5fa8"/><rect x="247.0" y="172" width="58" height="10" rx="4" fill="#12241b" opacity=".85"/><rect x="312.0" y="180" width="52" height="70.0" rx="5" fill="#b3261e"/><rect x="309.0" y="172" width="58" height="10" rx="4" fill="#12241b" opacity=".85"/><rect x="374.0" y="180" width="52" height="70.0" rx="5" fill="#2e7d32"/><rect x="371.0" y="172" width="58" height="10" rx="4" fill="#12241b" opacity=".85"/><rect x="436.0" y="180" width="52" height="70.0" rx="5" fill="#f2b600"/><rect x="433.0" y="172" width="58" height="10" rx="4" fill="#12241b" opacity=".85"/></svg>

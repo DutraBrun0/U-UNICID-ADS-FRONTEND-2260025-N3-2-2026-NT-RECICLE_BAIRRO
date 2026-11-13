@@ -8,15 +8,22 @@
 <meta name="theme-color" content="#1a3a2e">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>">
 <link rel="stylesheet" href="style.css">
+<script src="js/script.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html" aria-label="Reciclê Bairro, página inicial">Reciclê <span>Bairro</span></a>
-    
+
+    <!-- Botão do menu no celular (o JS alterna aria-expanded e a classe .aberto) -->
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-barras" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+
     <nav aria-label="Principal">
-      <ul class="nav-list">
+      <ul class="nav-list" id="menu-principal">
         <li><a href="index.html" aria-current="page">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="projetos.html">Ecopontos</a></li>
@@ -24,37 +31,30 @@
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="midia.html">Mídia</a></li>
         <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
         <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
       </ul>
     </nav>
 
-    <!-- Botão e Menu de Acessibilidade para Daltônicos -->
+    <!-- Modo daltônico: a escolha fica salva no localStorage -->
     <div class="accessibility-menu">
-      <button 
-        id="btn-daltonismo" 
-        class="btn-acessibilidade" 
-        aria-expanded="false" 
-        aria-controls="modal-daltonismo" 
-        aria-label="Opções de acessibilidade para daltônicos"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <button id="btn-daltonismo" class="btn-acessibilidade" type="button" aria-expanded="false" aria-controls="modal-daltonismo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
           <circle cx="12" cy="12" r="10"></circle>
           <path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"></path>
         </svg>
-        <span>Modo Daltônico</span>
+        <span>Modo daltônico</span>
       </button>
-
-      <div id="modal-daltonismo" class="modal-daltonismo" hidden>
+      <div id="modal-daltonismo" class="modal-daltonismo" role="group" aria-label="Tipo de visão" hidden>
         <p class="modal-title">Selecione o tipo de visão:</p>
-        <button data-modo="normal" class="btn-opcao active">Padrão</button>
-        <button data-modo="protanopia" class="btn-opcao">Protanopia (Vermelho)</button>
-        <button data-modo="deuteranopia" class="btn-opcao">Deuteranopia (Verde)</button>
-        <button data-modo="tritanopia" class="btn-opcao">Tritanopia (Azul)</button>
-        <button data-modo="alto-contraste" class="btn-opcao">Alto Contraste</button>
+        <button type="button" data-modo="normal" class="btn-opcao active" aria-pressed="true">Padrão</button>
+        <button type="button" data-modo="protanopia" class="btn-opcao" aria-pressed="false">Protanopia (vermelho)</button>
+        <button type="button" data-modo="deuteranopia" class="btn-opcao" aria-pressed="false">Deuteranopia (verde)</button>
+        <button type="button" data-modo="tritanopia" class="btn-opcao" aria-pressed="false">Tritanopia (azul)</button>
+        <button type="button" data-modo="alto-contraste" class="btn-opcao" aria-pressed="false">Alto contraste</button>
       </div>
     </div>
-    <!-- Fim do Menu de Acessibilidade -->
-
   </div>
 </header>
 
@@ -83,12 +83,14 @@
 </div></section>
 
 <section class="section"><div class="container">
-  <div class="section-head"><span class="eyebrow">Impacto até agora</span><h2>Números que já fazem diferença</h2></div>
+  <div class="section-head"><span class="eyebrow">O tamanho do problema</span><h2>A reciclagem no Brasil ainda é pequena</h2></div>
   <ul class="stats">
-    <li><span class="stat-num">3,2 t</span><span class="stat-label">de resíduos recicláveis encaminhados por mês</span></li>
-    <li><span class="stat-num">184</span><span class="stat-label">famílias participando ativamente</span></li>
-    <li><span class="stat-num">6</span><span class="stat-label">cooperativas de catadores parceiras</span></li>
+    <li><span class="stat-num">8,7%</span><span class="stat-label">do lixo urbano foi enviado à reciclagem em 2024</span></li>
+    <li><span class="stat-num">2/3</span><span class="stat-label">do material reciclado chega pelo trabalho dos catadores</span></li>
+    <li><span class="stat-num">40,3%</span><span class="stat-label">do lixo ainda vai para lixões e destinos irregulares</span></li>
   </ul>
+  <p class="source"><strong>Fonte:</strong> Abrema, Panorama dos Resíduos Sólidos no Brasil 2025 (ano-base 2024).</p>
+  <p>O Reciclê Bairro contribui para os <strong>ODS 8, 11 e 12</strong> da ONU: renda digna para catadores, cidades mais limpas e consumo responsável.</p>
 </div></section>
 
 <section class="section"><div class="container">
@@ -114,107 +116,31 @@
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="projetos.html">Ecopontos</a></li>
       <li><a href="impacto.html">Impacto</a></li>
-      <li><a href="acessibilidade.html">Acessibilidade</a></li>
       <li><a href="galeria.html">Galeria</a></li>
       <li><a href="midia.html">Mídia</a></li>
       <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="acessibilidade.html">Acessibilidade</a></li>
       <li><a href="contato.html">Contato</a></li>
-      <li><a href="hospedagem.html">Orçamento de hospedagem</a></li>
+      <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
     </ul>
-    <small>Reciclê Bairro — Atividade A2, Front-End, UNICID, 2026.</small>
-    <small>Projeto acadêmico: depoimentos, e-mail e telefone são ilustrativos.</small>
+    <ul class="ods-list" aria-label="Objetivos de Desenvolvimento Sustentável ligados ao projeto">
+      <li><span class="ods ods-8">ODS 8</span> Trabalho decente para catadores</li>
+      <li><span class="ods ods-11">ODS 11</span> Cidades e comunidades sustentáveis</li>
+      <li><span class="ods ods-12">ODS 12</span> Consumo e produção responsáveis</li>
+    </ul>
+    <small>Reciclê Bairro · Desenvolvimento Front-End para Web, UNICID, 2026.</small>
+    <small>Projeto acadêmico: depoimentos, e-mail, telefone e dados de doação são ilustrativos.</small>
   </div>
 </footer>
 
-<!-- Filtros SVG Globais para Daltonismo -->
-<svg style="display: none;">
+
+<!-- Filtros SVG usados pelo modo daltônico (style.css aplica com filter: url(#...)) -->
+<svg class="filtros-daltonismo" aria-hidden="true" focusable="false">
   <defs>
-    <filter id="protanopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.56667, 0.43333, 0,       0, 0
-        0.55833, 0.44167, 0,       0, 0
-        0,       0.24167, 0.75833, 0, 0
-        0,       0,       0,       1, 0" />
-    </filter>
-    <filter id="deuteranopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.625, 0.375, 0,   0, 0
-        0.7,   0.3,   0,   0, 0
-        0,     0.3,   0.7, 0, 0
-        0,     0,     0,   1, 0" />
-    </filter>
-    <filter id="tritanopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.95, 0.05,  0,     0, 0
-        0,    0.433, 0.567, 0, 0
-        0,    0.475, 0.525, 0, 0
-        0,    0,     0,     1, 0" />
-    </filter>
+    <filter id="protanopia-filter"><feColorMatrix type="matrix" values="0.56667 0.43333 0 0 0  0.55833 0.44167 0 0 0  0 0.24167 0.75833 0 0  0 0 0 1 0"/></filter>
+    <filter id="deuteranopia-filter"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/></filter>
+    <filter id="tritanopia-filter"><feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/></filter>
   </defs>
 </svg>
-
-<!-- Lógica em JavaScript para Acessibilidade -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btnMain = document.getElementById('btn-daltonismo');
-  const modal = document.getElementById('modal-daltonismo');
-  const opcoes = document.querySelectorAll('.btn-opcao');
-  const htmlEl = document.documentElement;
-
-  if (btnMain && modal) {
-    // Alterna visibilidade do modal
-    btnMain.addEventListener('click', () => {
-      const isExpanded = btnMain.getAttribute('aria-expanded') === 'true';
-      btnMain.setAttribute('aria-expanded', !isExpanded);
-      modal.hidden = isExpanded;
-    });
-
-    // Fecha ao clicar fora
-    document.addEventListener('click', (e) => {
-      if (!btnMain.contains(e.target) && !modal.contains(e.target)) {
-        modal.hidden = true;
-        btnMain.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // Aplica o filtro globalmente na tag <html>
-  function aplicarModo(modo) {
-    htmlEl.classList.remove(
-      'daltonismo-protanopia',
-      'daltonismo-deuteranopia',
-      'daltonismo-tritanopia',
-      'daltonismo-alto-contraste'
-    );
-
-    opcoes.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.modo === modo);
-    });
-
-    if (modo !== 'normal') {
-      htmlEl.classList.add(`daltonismo-${modo}`);
-    }
-
-    localStorage.setItem('modo-daltonismo', modo);
-  }
-
-  // Clique em uma das opções
-  opcoes.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const modo = btn.dataset.modo;
-      aplicarModo(modo);
-      modal.hidden = true;
-      btnMain.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Carrega opção salva no navegador
-  const modoSalvo = localStorage.getItem('modo-daltonismo');
-  if (modoSalvo) {
-    aplicarModo(modoSalvo);
-  }
-});
-</script>
-
 </body>
 </html>

@@ -7,15 +7,53 @@
 <meta name="description" content="Guia visual das cores da coleta seletiva e dicas para descartar corretamente.">
 <meta name="theme-color" content="#1a3a2e">
 <link rel="stylesheet" href="style.css">
+<script src="js/script.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html" aria-label="Reciclê Bairro, página inicial">Reciclê <span>Bairro</span></a>
+
+    <!-- Botão do menu no celular (o JS alterna aria-expanded e a classe .aberto) -->
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-barras" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+
     <nav aria-label="Principal">
-      <ul class="nav-list"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Ecopontos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="midia.html" aria-current="page">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li></ul>
+      <ul class="nav-list" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Ecopontos</a></li>
+        <li><a href="impacto.html">Impacto</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="midia.html" aria-current="page">Mídia</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+      </ul>
     </nav>
+
+    <!-- Modo daltônico: a escolha fica salva no localStorage -->
+    <div class="accessibility-menu">
+      <button id="btn-daltonismo" class="btn-acessibilidade" type="button" aria-expanded="false" aria-controls="modal-daltonismo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"></path>
+        </svg>
+        <span>Modo daltônico</span>
+      </button>
+      <div id="modal-daltonismo" class="modal-daltonismo" role="group" aria-label="Tipo de visão" hidden>
+        <p class="modal-title">Selecione o tipo de visão:</p>
+        <button type="button" data-modo="normal" class="btn-opcao active" aria-pressed="true">Padrão</button>
+        <button type="button" data-modo="protanopia" class="btn-opcao" aria-pressed="false">Protanopia (vermelho)</button>
+        <button type="button" data-modo="deuteranopia" class="btn-opcao" aria-pressed="false">Deuteranopia (verde)</button>
+        <button type="button" data-modo="tritanopia" class="btn-opcao" aria-pressed="false">Tritanopia (azul)</button>
+        <button type="button" data-modo="alto-contraste" class="btn-opcao" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
   </div>
 </header>
 <main id="conteudo" tabindex="-1">
@@ -33,119 +71,46 @@
     <li>Pilhas e baterias não vão no lixo comum: use pontos de coleta específicos.</li>
   </ul>
   <p><a class="btn" href="projetos.html#pontos">Encontrar um ponto de coleta</a></p>
-  <!-- VÍDEO (opcional): coloque o arquivo em /midia e remova este comentário.
-  <video controls width="720" poster="midia/capa.jpg">
-    <source src="midia/video.mp4" type="video/mp4">
-    <track kind="captions" src="midia/legendas.vtt" srclang="pt-BR" label="Português" default>
-    Seu navegador não reproduz vídeo. <a href="midia/transcricao.html">Leia a transcrição</a>.
-  </video> -->
+  <h2>Vídeo: as cores das lixeiras</h2>
+  <p>Um vídeo curto que explica o padrão de cores da coleta seletiva.</p>
+  <div class="embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/IfJ1z6ahgzk" title="Vídeo do YouTube sobre as cores das lixeiras da coleta seletiva" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <p class="note">Ative as legendas no botão CC do player. O conteúdo do vídeo também está em texto no guia acima.</p>
 </div></section>
 
 </main>
 <footer class="site-footer">
   <div class="container">
     <h2>Mapa do site</h2>
-    <ul class="footer-nav"><li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="projetos.html">Ecopontos</a></li><li><a href="impacto.html">Impacto</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="midia.html">Mídia</a></li><li><a href="noticias.html">Notícias</a></li><li><a href="contato.html">Contato</a></li><li><a href="hospedagem.html">Orçamento de hospedagem</a></li></ul>
-    <small>Reciclê Bairro — Atividade A2, Front-End, UNICID, 2026.</small>
-    <small>Projeto acadêmico: depoimentos, e-mail e telefone são ilustrativos.</small>
+    <ul class="footer-nav">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="projetos.html">Ecopontos</a></li>
+      <li><a href="impacto.html">Impacto</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="midia.html">Mídia</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="acessibilidade.html">Acessibilidade</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+    </ul>
+    <ul class="ods-list" aria-label="Objetivos de Desenvolvimento Sustentável ligados ao projeto">
+      <li><span class="ods ods-8">ODS 8</span> Trabalho decente para catadores</li>
+      <li><span class="ods ods-11">ODS 11</span> Cidades e comunidades sustentáveis</li>
+      <li><span class="ods ods-12">ODS 12</span> Consumo e produção responsáveis</li>
+    </ul>
+    <small>Reciclê Bairro · Desenvolvimento Front-End para Web, UNICID, 2026.</small>
+    <small>Projeto acadêmico: depoimentos, e-mail, telefone e dados de doação são ilustrativos.</small>
   </div>
 </footer>
-<!-- Filtros SVG Globais para Daltonismo (Coloque em todas as páginas antes de </body>) -->
-<svg style="display: none;">
+<!-- Filtros SVG usados pelo modo daltônico (style.css aplica com filter: url(#...)) -->
+<svg class="filtros-daltonismo" aria-hidden="true" focusable="false">
   <defs>
-    <filter id="protanopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.56667, 0.43333, 0,       0, 0
-        0.55833, 0.44167, 0,       0, 0
-        0,       0.24167, 0.75833, 0, 0
-        0,       0,       0,       1, 0" />
-    </filter>
-    <filter id="deuteranopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.625, 0.375, 0,   0, 0
-        0.7,   0.3,   0,   0, 0
-        0,     0.3,   0.7, 0, 0
-        0,     0,     0,   1, 0" />
-    </filter>
-    <filter id="tritanopia-filter">
-      <feColorMatrix type="matrix" values="
-        0.95, 0.05,  0,     0, 0
-        0,    0.433, 0.567, 0, 0
-        0,    0.475, 0.525, 0, 0
-        0,    0,     0,     1, 0" />
-    </filter>
+    <filter id="protanopia-filter"><feColorMatrix type="matrix" values="0.56667 0.43333 0 0 0  0.55833 0.44167 0 0 0  0 0.24167 0.75833 0 0  0 0 0 1 0"/></filter>
+    <filter id="deuteranopia-filter"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/></filter>
+    <filter id="tritanopia-filter"><feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/></filter>
   </defs>
 </svg>
-
-<!-- Script de Acessibilidade Global -->
-<script>
-// APLICA IMEDIATAMENTE AO CARREGAR A PÁGINA (Evita piscar a cor original)
-(function() {
-  const modoSalvo = localStorage.getItem('modo-daltonismo');
-  if (modoSalvo && modoSalvo !== 'normal') {
-    document.documentElement.classList.add(`daltonismo-${modoSalvo}`);
-  }
-})();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const btnMain = document.getElementById('btn-daltonismo');
-  const modal = document.getElementById('modal-daltonismo');
-  const opcoes = document.querySelectorAll('.btn-opcao');
-  const htmlEl = document.documentElement;
-
-  if (btnMain && modal) {
-    btnMain.addEventListener('click', () => {
-      const isExpanded = btnMain.getAttribute('aria-expanded') === 'true';
-      btnMain.setAttribute('aria-expanded', !isExpanded);
-      modal.hidden = isExpanded;
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!btnMain.contains(e.target) && !modal.contains(e.target)) {
-        modal.hidden = true;
-        btnMain.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  function aplicarModo(modo) {
-    htmlEl.classList.remove(
-      'daltonismo-protanopia',
-      'daltonismo-deuteranopia',
-      'daltonismo-tritanopia',
-      'daltonismo-alto-contraste'
-    );
-
-    opcoes.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.modo === modo);
-    });
-
-    if (modo !== 'normal') {
-      htmlEl.classList.add(`daltonismo-${modo}`);
-    }
-
-    localStorage.setItem('modo-daltonismo', modo);
-  }
-
-  opcoes.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const modo = btn.dataset.modo;
-      aplicarModo(modo);
-      if (modal) {
-        modal.hidden = true;
-        btnMain.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // Sincroniza o botão ativo caso o usuário abra o menu em outra página
-  const modoSalvo = localStorage.getItem('modo-daltonismo');
-  if (modoSalvo) {
-    opcoes.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.modo === modoSalvo);
-    });
-  }
-});
-</script>
 </body>
 </html>

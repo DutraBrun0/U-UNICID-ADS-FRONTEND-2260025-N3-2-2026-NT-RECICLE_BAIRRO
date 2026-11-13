@@ -1,0 +1,11 @@
+Reciclê Bairro · Grupo Arrogantes
+Desenvolvimento Front-End para Web · UNICID 2026.2
+
+Nome completo                       RA
+Bruno Dutra [sobrenome completo]    [RA]
+Matheus Brizzi [sobrenome completo] [RA]
+[Integrante 3]                      [RA]
+[Integrante 4]                      [RA]
+
+Site: https://u-unicid-ads-frontend-2260025-n3-2.vercel.app/
+Repositório: https://github.com/DutraBrun0/U-UNICID-ADS-FRONTEND-2260025-N3-2-2026-NT-RECICLE_BAIRRO

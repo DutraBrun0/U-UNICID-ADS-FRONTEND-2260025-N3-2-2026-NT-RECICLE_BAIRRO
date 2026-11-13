@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orçamento de hospedagem | Reciclê Bairro</title>
+<meta name="description" content="Comparativo de opções de hospedagem e domínio para publicar o Reciclê Bairro.">
+<meta name="theme-color" content="#1a3a2e">
+<link rel="stylesheet" href="style.css">
+<script src="js/script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Reciclê Bairro, página inicial">Reciclê <span>Bairro</span></a>
+
+    <!-- Botão do menu no celular (o JS alterna aria-expanded e a classe .aberto) -->
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="menu-toggle-barras" aria-hidden="true"></span>
+      <span>Menu</span>
+    </button>
+
+    <nav aria-label="Principal">
+      <ul class="nav-list" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Ecopontos</a></li>
+        <li><a href="impacto.html">Impacto</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="midia.html">Mídia</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="acessibilidade.html">Acessibilidade</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="orcamento_hospedagem.html" aria-current="page">Orçamento</a></li>
+      </ul>
+    </nav>
+
+    <!-- Modo daltônico: a escolha fica salva no localStorage -->
+    <div class="accessibility-menu">
+      <button id="btn-daltonismo" class="btn-acessibilidade" type="button" aria-expanded="false" aria-controls="modal-daltonismo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"></path>
+        </svg>
+        <span>Modo daltônico</span>
+      </button>
+      <div id="modal-daltonismo" class="modal-daltonismo" role="group" aria-label="Tipo de visão" hidden>
+        <p class="modal-title">Selecione o tipo de visão:</p>
+        <button type="button" data-modo="normal" class="btn-opcao active" aria-pressed="true">Padrão</button>
+        <button type="button" data-modo="protanopia" class="btn-opcao" aria-pressed="false">Protanopia (vermelho)</button>
+        <button type="button" data-modo="deuteranopia" class="btn-opcao" aria-pressed="false">Deuteranopia (verde)</button>
+        <button type="button" data-modo="tritanopia" class="btn-opcao" aria-pressed="false">Tritanopia (azul)</button>
+        <button type="button" data-modo="alto-contraste" class="btn-opcao" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </div>
+</header>
+<main id="conteudo" tabindex="-1">
+<section class="page-title"><div class="container"><span class="eyebrow">Orçamento</span><h1>Quanto custa colocar o site no ar</h1><p class="lead">O Reciclê Bairro é um site estático (HTML, CSS e JavaScript), o que permite hospedagem gratuita. Abaixo, as opções comparadas.</p></div></section>
+<section class="section"><div class="container">
+  <div class="table-wrap" tabindex="0" role="region" aria-labelledby="cap-hosp">
+  <table>
+    <caption id="cap-hosp">Opções de hospedagem (valores de referência, aproximados)</caption>
+    <thead><tr><th scope="col">Opção</th><th scope="col">Indicada para</th><th scope="col">Custo mensal</th><th scope="col">Observações</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">GitHub Pages</th><td>Sites estáticos</td><td>R$ 0</td><td>HTTPS incluso; domínio próprio opcional; sem back-end.</td></tr>
+      <tr><th scope="row">Netlify, Cloudflare Pages ou Vercel (plano gratuito)</th><td>Sites estáticos com publicação automática</td><td>R$ 0</td><td>Há limites de uso no plano gratuito.</td></tr>
+      <tr><th scope="row">Hospedagem compartilhada</th><td>Sites com PHP, WordPress e e-mail próprio</td><td>cerca de R$ 10 a R$ 30</td><td>Painel pronto; desempenho varia conforme o plano.</td></tr>
+      <tr><th scope="row">VPS</th><td>Aplicações com back-end e banco de dados</td><td>cerca de R$ 30 a R$ 100 ou mais</td><td>Exige administrar o servidor, com mais controle.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:.8rem">Os preços dos provedores mudam com frequência: confira na página oficial de cada um antes de contratar.</p>
+</div></section>
+<section class="section"><div class="container">
+  <div class="section-head"><h2>Por que escolhemos a Vercel</h2></div>
+  <ul class="cards">
+    <li class="card"><h3>Custo zero</h3><p>O plano gratuito atende um site estático como o nosso, sem servidor nem banco de dados.</p></li>
+    <li class="card"><h3>HTTPS automático</h3><p>O certificado de segurança é criado e renovado sem configuração.</p></li>
+    <li class="card"><h3>Deploy a cada push</h3><p>Cada commit na branch main no GitHub publica uma versão nova em cerca de um minuto.</p></li>
+  </ul>
+  <p>Endereço publicado: <a href="https://u-unicid-ads-frontend-2260025-n3-2.vercel.app/">u-unicid-ads-frontend-2260025-n3-2.vercel.app</a></p>
+</div></section>
+<section class="section"><div class="container">
+  <div class="section-head"><h2>Cenário recomendado</h2><p>Vercel gratuita com domínio próprio.</p></div>
+  <ul class="stats">
+    <li><span class="stat-num">R$ 0</span><span class="stat-label">hospedagem na Vercel</span></li>
+    <li><span class="stat-num">R$ 40</span><span class="stat-label">domínio .com.br por ano, no Registro.br</span></li>
+    <li><span class="stat-num">≈ R$ 3,33</span><span class="stat-label">custo mensal total</span></li>
+  </ul>
+</div></section>
+<section class="section"><div class="container">
+  <div class="section-head"><h2>Alternativa gratuita: GitHub Pages</h2></div>
+  <ol class="steps">
+    <li><h3>Crie um repositório</h3><p>No GitHub, crie um repositório público para o projeto.</p></li>
+    <li><h3>Envie os arquivos</h3><p>Suba as páginas, o <code>style.css</code> e a pasta <code>img</code>.</p></li>
+    <li><h3>Ative o Pages</h3><p>Em Settings, abra Pages e escolha a branch principal como origem.</p></li>
+    <li><h3>Acesse o endereço</h3><p>Em alguns minutos o site fica disponível no endereço gerado pelo GitHub.</p></li>
+  </ol>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <h2>Mapa do site</h2>
+    <ul class="footer-nav">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="projetos.html">Ecopontos</a></li>
+      <li><a href="impacto.html">Impacto</a></li>
+      <li><a href="galeria.html">Galeria</a></li>
+      <li><a href="midia.html">Mídia</a></li>
+      <li><a href="noticias.html">Notícias</a></li>
+      <li><a href="acessibilidade.html">Acessibilidade</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="orcamento_hospedagem.html">Orçamento</a></li>
+    </ul>
+    <ul class="ods-list" aria-label="Objetivos de Desenvolvimento Sustentável ligados ao projeto">
+      <li><span class="ods ods-8">ODS 8</span> Trabalho decente para catadores</li>
+      <li><span class="ods ods-11">ODS 11</span> Cidades e comunidades sustentáveis</li>
+      <li><span class="ods ods-12">ODS 12</span> Consumo e produção responsáveis</li>
+    </ul>
+    <small>Reciclê Bairro · Desenvolvimento Front-End para Web, UNICID, 2026.</small>
+    <small>Projeto acadêmico: depoimentos, e-mail, telefone e dados de doação são ilustrativos.</small>
+  </div>
+</footer>
+<!-- Filtros SVG usados pelo modo daltônico (style.css aplica com filter: url(#...)) -->
+<svg class="filtros-daltonismo" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="protanopia-filter"><feColorMatrix type="matrix" values="0.56667 0.43333 0 0 0  0.55833 0.44167 0 0 0  0 0.24167 0.75833 0 0  0 0 0 1 0"/></filter>
+    <filter id="deuteranopia-filter"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/></filter>
+    <filter id="tritanopia-filter"><feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/></filter>
+  </defs>
+</svg>
+</body>
+</html>
